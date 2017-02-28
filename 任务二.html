@@ -42,10 +42,7 @@
 	section{
 		margin: 30px 20px;
 		padding: 0px 20px 30px 20px;
-		border-top: 1px solid rgb(215,215,215);
-		border-left: 1px solid rgb(215,215,215);
-		border-right: 3px solid rgb(200,200,200);
-		border-bottom: 3px solid rgb(200,200,200);
+		box-shadow: 5px 5px 10px rgb(171,171,171);
 		background-color: rgb(255,255,255);
 	}
 	article p:first-child{
@@ -61,10 +58,7 @@
 	.picture-group{
 		margin: 30px 20px;
 		padding: 0px 20px 30px 20px;
-		border-top: 1px solid rgb(215,215,215);
-		border-left: 1px solid rgb(215,215,215);
-		border-right: 3px solid rgb(200,200,200);
-		border-bottom: 3px solid rgb(200,200,200);
+		box-shadow: 5px 5px 10px rgb(171,171,171);
 		background-color: rgb(255,255,255);
 	}
 	.picture-group figure{
@@ -112,29 +106,41 @@
 	}
 	.fourth-sec form{
 		width: 75%;
-		margin: 20px auto;
+		margin: 20px 0px;
 		font-size: 0.85em;
 	}
-	.fourth-sec form table td{
-		padding: 3px 0;
+	.fourth-sec form div{
+		margin-top: 10px;
 	}
-	.fourth-sec form table .td-right{
+	.fourth-sec form p{
+		margin-left: 40%;
+		padding-left: 6px;
+		color: rgb(142,143,138);
+	}
+	.fourth-sec .left-label{
 		text-align: right;
+		display: inline-block;
+		width: 40%;
 	}
-	.fourth-sec form table p{
-		color: rgb(215,215,215);
+	.fourth-sec div:last-child label{
+		position: relative;
+		bottom: 190px;
+	}
+	.fourth-sec textarea{
+		width: 500px;
+		height: 200px;
 	}
 	.fourth-sec button{
 		width: 100%;
 		height: 30px;
 		border: none;
+		border-radius: 3px;
 		cursor: pointer;
-		border-radius: 5px;
-		background-color: rgb(51,85,208);
 		color: rgb(255,255,255);
+		background-color: rgb(51,85,208);
 	}
 	footer{
-		height: 60px;
+		height: 40px;
 		padding: 16px;
 		text-align: center;
 		background-color: rgb(0,0,0);
@@ -278,54 +284,43 @@
 		<h3>这里以后是一个侧栏，这是侧栏的标题</h3>
 	</aside>
 		<form name="" method="" action="" id="form1">
-		<table>
-			<tr>
-				<td class="td-right"><label>请输入一个邮箱:</label></td>
-				<td><input type="email" name="email" placeholder="这是一个文本输入框"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><p>邮箱请按格式要求输入</p><br></td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>请输入密码：</label></td>
-				<td><input type="password" name="password1" placeholder="这是一个文本输入框"></td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>请重复输入密码：</label></td>
-				<td><input type="password" name="password2" placeholder="这是一个文本输入框"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><p>密码请为6-16位英文数字</p><br></td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>性别：</label></td>
-				<td><input type="radio" name="sex" value="男" checked="checked"> 男 <input type="radio" name="sex" value="女"> 女</td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>城市：</label></td>
-				<td>
+		  	<div>
+				<label class="left-label">请输入一个邮箱</label>
+					<input type="email" name="email" placeholder="这是一个文本输入框">
+					<p>邮箱请按格式要求输入</p><br>
+			</div>
+			<div>
+				<label class="left-label">请输入密码</label>
+					<input type="password" name="password1" placeholder="这是一个文本输入框">
+			</div>
+			<div>
+				<label class="left-label">请重复输入密码</label>
+					<input type="password" name="password2" placeholder="这是一个文本输入框">
+					<p>密码请为6-16位英文数字</p><br>
+			</div>
+			<div>
+				<label class="left-label">性别</label>
+					<input type="radio" name="sex" value="男" checked="checked"> 男 <input type="radio" name="sex" value="女"> 女
+			</div>
+			<div>
+				<label class="left-label">城市</label>
 					<select>
-						<option value="北京">北京</option>
-						<option value="广州">广州</option>
-						<option value="上海">上海</option>
+							<option value="北京">北京</option>
+							<option value="广州">广州</option>
+							<option value="上海">上海</option>
 					</select>
-				</td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>爱好：</label></td>
-				<td>
+			</div>
+			<div>
+				<label class="left-label">爱好</label>
 					<input type="checkbox" name="yundong" name="运动"> 运动
 					<input type="checkbox" name="yishu" name="艺术"> 艺术
 					<input type="checkbox" name="kexue" name="科学"> 科学 
-				</td>
-			</tr>
-			<tr>
-				<td class="td-right"><label>个人描述：</label></td>
-				<td><textarea cols="30" rows="2">这是一个多行输入框，输入您的个人描述</textarea></td>
-			</tr>
-		</table>
+			</div>
+			<div>
+				<label class="left-label">个人描述</label>
+				<textarea>这是一个多行输入框，输入您的个人描述</textarea>	
+			</div>
+			
 		</form>
 		<button form="form1" type="submit">确认提交</button>
 </section>
