@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>任务4</title>
+<script type="text/javascript">
+function draw(){
+	var canvas1=document.getElementById("circle1");
+	var ctx1=canvas1.getContext("2d");
+	ctx1.beginPath();
+	ctx1.arc(0,0,50,0,(Math.PI)/2,false);
+	ctx1.lineTo(0,0);
+	ctx1.fillStyle="rgb(255,204,0)";
+	ctx1.fill();
+	var canvas2=document.getElementById("circle2");
+	var ctx2=canvas2.getContext("2d");
+	ctx2.beginPath();
+	ctx2.arc(300,150,50,3*(Math.PI)/2,Math.PI,true);
+	ctx2.lineTo(300,150);
+	ctx2.fillStyle="rgb(255,204,0)";
+	ctx2.fill();
+}
+
+</script>
+<style type="text/css">
+	.box{
+		width: 400px;
+		height: 200px;
+		background-color: #ccc;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	#circle2{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+</style>
+</head>
+<body onload="draw();">
+	<div class="box">
+		<canvas id="circle1">
+		</canvas>
+		<canvas id="circle2">
+		</canvas>
+	</div>
+</body>
+</html>
