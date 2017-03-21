@@ -3,7 +3,7 @@ body{
 	padding: 0;
 	font-size: 14px;
 	font-family: "微软雅黑";
-	width: 1280px;/*基于大多数用户的页面选择*/
+	min-width: 1280px;/*基于大多数用户的页面选择*/
 }
 /*导航栏部分 主要使用浮动定位*/
 header{
@@ -36,6 +36,7 @@ header ul{
 	margin: 0;
 	list-style-type: none;
 	overflow: hidden;
+	position: relative;
 }
 header nav li{
 	width: 70px;
@@ -52,8 +53,14 @@ header nav li:first-child{
 	background: url("../image/task7-login.png") -6px 3px no-repeat;
 }
 header nav li:last-child{
+	border-bottom: 2px solid red;
+}
+.header_changeborder:hover{
 	color: red;
 	border-bottom: 2px solid red;
+}
+.header_changeborder:hover~.header_changer{
+	border: none;
 }
 /*第一部分*/
 .sec1{
@@ -72,6 +79,7 @@ header nav li:last-child{
 	font-size: 48px;
 	line-height: 64px;
 	color: #ffffff;
+	letter-spacing: 3px;
 }
 .cn_pic{
 	margin: 0;
