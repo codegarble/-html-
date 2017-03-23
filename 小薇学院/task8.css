@@ -1,0 +1,72 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+.grid-layout{
+	padding: 10px;
+}
+.box{
+	margin: 10px 0;
+	box-sizing: border-box;
+	height: 50px;
+	padding: 0 10px;
+	float: left;
+}
+.content{
+	box-sizing: border-box;
+	height: 50px;
+	border: 1px solid #999;
+	background-color: #eee;
+}
+@media (min-width: 768px){
+	.col_big_1{width: 8.33%;}
+	.col_big_1>.content:before{content: "1栏";}
+	.col_big_2{width: 16.66%;}
+	.col_big_2>.content:before{content: "2栏";}
+	.col_big_3{width: 25%;}
+	.col_big_3>.content:before{content: "3栏";}
+	.col_big_4{width: 33.33%;}
+	.col_big_4>.content:before{content: "4栏";}
+	.col_big_5{width: 41.66%;}
+	.col_big_5>.content:before{content: "5栏";}
+	.col_big_6{width: 50%;}
+	.col_big_6>.content:before{content: "6栏";}
+	.col_big_7{width: 58.33%;}
+	.col_big_7>.content:before{content: "7栏";}
+	.col_big_8{width: 66.66%;}
+	.col_big_8>.content:before{content: "8栏";}
+	.col_big_9{width: 75%;}
+	.col_big_9>.content:before{content: "9栏";}
+	.col_big_10{width: 83.33%;}
+	.col_big_10>.content:before{content: "10栏";}
+	.col_big_11{width: 91.66%;}
+	.col_big_11>.content:before{content: "11栏";}
+	.col_big_12{width: 100%;}
+	.col_big_12>.content:before{content: "12栏";}
+}
+@media (max-width: 768px){
+	.col_small_1{width: 8.33%;}
+	.col_small_1>.content:before{content: "1栏";}
+	.col_small_2{width: 16.66%;}
+	.col_small_2>.content:before{content: "2栏";}
+	.col_small_3{width: 25%;}
+	.col_small_3>.content:before{content: "3栏";}
+	.col_small_4{width: 33.33%;}
+	.col_small_4>.content:before{content: "4栏";}
+	.col_small_5{width: 41.66%;}
+	.col_small_5>.content:before{content: "5栏";}
+	.col_small_6{width: 50%;}
+	.col_small_6>.content:before{content: "6栏";}
+	.col_small_7{width: 58.33%;}
+	.col_small_7>.content:before{content: "7栏";}
+	.col_small_8{width: 66.66%;}
+	.col_small_8>.content:before{content: "8栏";}
+	.col_small_9{width: 75%;}
+	.col_small_9>.content:before{content: "9栏";}
+	.col_small_10{width: 83.33%;}
+	.col_small_10>.content:before{content: "10栏";}
+	.col_small_11{width: 91.66%;}
+	.col_small_11>.content:before{content: "11栏";}
+	.col_small_12{width: 100%;}
+	.col_small_12>.content:before{content: "12栏";}
+}
