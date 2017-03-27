@@ -1,10 +1,12 @@
 body{
+	width: 1280px;
 	margin: 0 auto;
 	padding: 0;
 	font-size: 14px;
 	font-family: "微软雅黑";
 	min-width: 1280px;/*基于大多数用户的页面选择*/
 }
+
 /*导航栏部分 主要使用浮动定位*/
 header{
 	width: 1280px;
