@@ -1,10 +1,4 @@
-body{
-	margin: 0;
-	padding: 0;
-	font-size: 14px;
-}
 header{
-	width: 100%;
 	height: 55px;
 	margin: 0 auto;
 	background-color: rgb(33,137,190);
@@ -21,9 +15,10 @@ header{
 header input{
 	width: 274px;
 	height: 24px;
+	line-height: 24px;
 	padding-left: 30px;
-	border: none;
 	border-radius: 25px;
+	outline: none;/*去掉外层轮廓*/
 	position: absolute;
 	top: 15px;
 	right: 150px;
@@ -34,9 +29,7 @@ header input{
 	padding-left: 25px;
 	height: 55px;
 	line-height: 55px;
-	text-decoration: none;
 	color: #fff;
-	font-family: "黑体";
 	position: absolute;
 	top: 0;
 	right: 90px;
@@ -52,101 +45,69 @@ aside{
 	background-color: rgb(43,46,61);
 	float: left;
 }
-aside figure{
+.circle_logo{
 	margin: 0;
 	width: 260px;
 	height: 100px;
 	position: relative;
 }
-.asidepart1{
-	overflow: hidden;
-}
-.asidepart1 figure img{
+.circle_logo>div{
+	width: 57px;
+	height: 57px;
+	line-height: 57px;
+	border: 1px solid rgb(185,185,185);
+	border-radius: 50%;
+	text-align: center;
+	font-size: 0;/*非常重要，失去会使子元素垂直居中偏移*/
 	position: absolute;
-	top: 20px;
+	top: 30px;
 	left: 45px;
 }
-.asidepart1 figure p{
-	margin: 0;
+.circle_logo span{
+	display: inline-block;
+	vertical-align: middle;
+	width: 47px;
+	height: 47px;
+	border-radius: 50%;
+	background-color: rgb(185,185,185);
+}
+.circle_logo p{
 	position: absolute;
-	top: 42px;
+	top: 50px;
 	left: 120px;
-	color: #fff;
-	font-family: "微软雅黑";
 }
-.collection{
-	width: 118px;
-	height: 32px;
-	float: left;
-	margin-bottom: 18px;
-	border-right: 2px solid rgb(60,63,80);
+.asidepart1 ul{
+	margin-top: 15px;
+	padding-left: 30px;
+	margin-bottom: 20px;
 }
-.collection p{
-	margin: 0;
-	position: relative;
-}
-.collection p span{
-	display: inline-block;
-	width: 28px;
+.asidepart1 li{
+	width: 85px;
 	text-align: center;
-	color: rgb(98,114,133);
-	position: absolute;
-	left: 60px;
-	
-}
-.fans{
-	width: 140px;
-	height: 32px;
 	float: left;
-	margin-bottom: 18px;
 }
-.fans p{
-	margin: 0;
-	position: relative;
+.asidepart1 li:first-child{
+	border-right: 2px solid #313545;
 }
-.fans p span{
-	display: inline-block;
-	width: 28px;
-	text-align: center;
-	color: rgb(98,114,133);
-	position: absolute;
-	right: 85px;
-}
-.asidepart2{
-	width: 260px;
-	font-family: "黑体";
-}
-.asidepart2 ul{
-	margin: 0;
-	list-style-type: none;
+/*列表通用样式*/
+.asidepart2 a{
+	color: #6e8096;
 }
 /*单独设置第一层列表样式*/
 .asidepart2>ul>li{
-	margin: 32px 0;
-	padding: 8px 0;
+	width: 220px;
+	padding: 16px 0;
+	padding-left: 40px;
 }
+/*设置第二三层列表样式*/
+.asidepart2>ul>li li{
+	margin: 12px 0;/*这里使用外边距主要是利用外边距塌陷*/
+	padding-left: 20px;
+}
+/*设置首层li图案*/
 .asidepart2>ul>li>a{
 	padding-left: 25px;/*为图案预留位置*/
 }
-.asidepart2>ul>li:first-child{
-	margin-top: 0;
-}
-.asidepart2>ul>li:last-child{
-	margin-bottom: 0;
-}
-/*列表通用样式*/
-.asidepart2 ul li a{
-	text-decoration: none;
-	color: rgb(98,114,133);
-}
-/*除第一层外列表样式*/
-.asidepart2>ul>li ul{
-	margin-top: 12px;
-}
-.asidepart2>ul>li li{
-	margin-top: 12px;
-}
-/*设置首层li图案*/
 .reportform{
 	background: url(../image/task9-reportform.png) no-repeat;
 }
@@ -162,48 +123,39 @@ aside figure{
 /*设置第二层li图案*/
 .file{
 	padding-left: 35px;/*为图案预留空间*/
-}
-.file{
 	background-image: url("../image/task9-rightarrow.png"),url("../image/task9-file.png");
 	background-position: 0 0px,16px 1px;
 	background-repeat: no-repeat;
 }
 /*设置第三层li图案*/
 .filearticle{
-	padding-left: 15px;
-}
-.filearticle{
+	padding-left: 15px;/*为图案预留空间*/
 	background: url("../image/task9-article.png") no-repeat;
 }
-/*动态样式*/
-.asidepart2>ul ul{
-	display: none;/*在初始化阶段隐藏*/
-}
+/*列表动态样式*/
+/*悬浮改变字体颜色*/
 .asidepart2 li:hover>a{
 	color: #fff;/*这里要想使图案变色需要将背景图案更换成白色来达到效果，但我没有白色的图，所以这里就算了 O.o*/
 }
-.asidepart2 li:hover>ul{
-	display: block;
+/*第一层li悬浮改变背景色*/
+.asidepart2>ul>li:hover{
+	background-color: rgb(56,61,78);
 }
 /*主体部分*/
 .maincontent{
 	width: 1020px;
 	height: 1200px;
-	float: left;
 	background-color: rgb(237,237,237);
+	float: left;
 }
 /*第一部分*/
 .sec1{
-	margin: 0;
-	width: 1020px;
 	height: 30px;
-	font-family: "黑体";
 }
 .sec1 p{
-	margin: 0;
-	padding-left: 20px;
 	height: 30px;
 	line-height: 30px;
+	padding-left: 20px;
 	color: rgb(188,188,188);
 	background-color: #fff;
 	cursor: pointer;
@@ -215,14 +167,9 @@ aside figure{
 	margin: 0 auto;
 	margin-top: 20px;
 	background-color: #fff;
-	font-family: "黑体";
 }
 .sec2 label{
 	color: rgb(188,188,188);
-}
-.sec2 select{
-	font-family: "黑体";
-	border: 1px solid rgb(188,188,188);
 }
 .sec2label1{
 	width: 150px;
@@ -261,7 +208,6 @@ aside figure{
 .sec2label3 input[name="date"]{
 	width: 115px;
 	height: 21px;
-	font-family: "黑体";
 }
 .sec2label3 select[name="time"]{
 	width: 70px;
@@ -280,11 +226,10 @@ aside figure{
 	height: 25px;
 	margin: 27px 0;
 	border: none;
-	cursor: pointer;
 	border-radius: 2px;
+	cursor: pointer;
 	background-color: rgb(56,138,192);
 	color: #fff;
-	font-family: "黑体";
 }
 /*第三部分*/
 .sec3{
@@ -296,9 +241,6 @@ aside figure{
 .sec3 ul{
 	width: 890px;
 	height: 65px;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
 	overflow: hidden;
 }
 .sec3 li{
@@ -317,15 +259,14 @@ aside figure{
 	text-align: center;
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	font-family: "黑体";
+	transform: translateY(-50%);/*垂直居中*/
 }
-.sec3 li p span:nth-of-type(1){
+.sec3 li p span:nth-child(2){
 	color: rgb(188,188,188);
 }
 .sec3 li p span:last-child{
-	font-size: 24px;
 	color: red;
+	font-size: 24px;
 	font-weight: bold;
 }
 .sec3 li:nth-child(1),.sec3 li:nth-child(8)/*带有图片的li*/{
@@ -335,35 +276,28 @@ aside figure{
 .sec3 li:nth-child(1) img,.sec3 li:nth-child(8) img{
 	margin: 22px 5px;/*列表中的两张图片*/
 }
-.sec3 li:nth-child(2){
-	height: 63px;
-	border-top: 2px solid rgb(77,142,204);
-}
 .sec3 li:last-child{
 	width: 75px;
 	margin-right: 0;
 	padding-left: 55px;
 	line-height: 65px;
-	font-family: "黑体";
 	background: url("../image/task9-sec3history.png") 10px 15px no-repeat #fff;
+}
+.sec3lihover:hover{
+	height: 63px;/*高度减去额外增加的边框厚度来使得与原来高度保持不变*/
+	border-top: 2px solid rgb(77,142,204);
 }
 /*第四部分*/
 .sec4title{
+	width: 890px;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 5px;
-	width: 890px;
-	font-family: "黑体";
 }
 .sec4{
 	width: 890px;
 	height: 70px;
 	margin: 0 auto;
-}
-.sec4 ul{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
 }
 .sec4 li{
 	width: 198px;
@@ -377,7 +311,6 @@ aside figure{
 	margin: 12px 0;
 	margin-left: 10px;
 	height: 45px;
-	font-family: "黑体";
 	position: relative;
 }
 .sec4 li p span{
@@ -447,10 +380,8 @@ aside figure{
 	float: left;
 }
 .sec5left h4{
-	margin: 0;
 	height: 40px;
 	line-height: 40px;
-	font-family: "黑体";
 	color: rgb(188,188,188);
 	text-indent: 28px;
 	background-color: rgb(244,245,247);
@@ -462,11 +393,6 @@ aside figure{
 	margin: 0 auto;
 	margin-top: 10px;
 	position: relative;
-}
-.sec5left ul{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
 }
 .sec5left li{
 	display: inline-block;
@@ -507,10 +433,6 @@ aside figure{
 	top: 0;
 	left: 330px;
 }
-.sec5left li a{
-	text-decoration: none;
-	font-family: "黑体";
-}
 .sec5leftdown>div{
 	width: 478px;
 	height: 243px;
@@ -525,7 +447,6 @@ aside figure{
 	width: 395px;
 	height: 185px;
 	margin: 29px auto;
-	border-collapse: collapse;
 }
 .sec5leftdown table td{
 	margin: 0;
@@ -547,10 +468,8 @@ aside figure{
 	position: relative;
 }
 .sec5right h4{
-	margin: 0;
 	height: 40px;
 	line-height: 40px;
-	font-family: "黑体";
 	color: rgb(188,188,188);
 	text-indent: 28px;
 	background-color: rgb(244,245,247);
@@ -559,13 +478,11 @@ aside figure{
 .sec5right form input{
 	border: none;
 	font-size: 16px;
-	font-family: "黑体";
 }
 .higherinput{
 	height: 24px;
 }
 .sec5right form label{
-	font-family: "黑体";
 	color: rgb(188,188,188);
 }
 label[for="title"],label[for="price"],label[for="responsible"],label[for="describe"]{
@@ -615,9 +532,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	line-height: 35px;
 	margin-left: 31px;
 }
-.sec5rightsecrecy{
-
-}
 .sec5right button{
 	width: 50px;
 	height: 25px;
@@ -654,10 +568,8 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	float: right;
 }
 .sec6left h4{
-	margin: 0;
 	height: 40px;
 	line-height: 40px;
-	font-family: "黑体";
 	color: rgb(188,188,188);
 	text-indent: 28px;
 	background-color: rgb(244,245,247);
@@ -692,7 +604,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	width: 315px;
 	height: 260px;
 	margin: 0 auto;
-	border-collapse: collapse;
 }
 .sec6left table thead{
 	line-height: 30px;
@@ -700,7 +611,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 }
 .sec6left table td{
 	width: 40px;
-	font-family: "黑体";
 	text-align: center;
 }
 .tdborder{
