@@ -286,7 +286,7 @@ aside{
 .sec3lihover:hover{
 	height: 63px;/*高度减去额外增加的边框厚度来使得与原来高度保持不变*/
 	border-top: 2px solid rgb(77,142,204);
-}
+}/*或者设置border-box来忽略边框的增加对高度的影响*/
 /*第四部分*/
 .sec4title{
 	width: 890px;
@@ -392,70 +392,61 @@ aside{
 	height: 278px;
 	margin: 0 auto;
 	margin-top: 10px;
+}
+.sec5leftdown ul{
+	width: 490px;
 	position: relative;
 }
-.sec5left li{
+.sec5leftdown li{
+	float: left;
+	margin-right: 2px;
+}	
+
+.sec5leftdown li label{
 	display: inline-block;
 	width: 78px;
 	height: 30px;
-	line-height: 30px;
+	line-height: 25px;
 	text-align: center;
-	border-radius: 3px 3px 0 0;
-	background-color: rgb(237,236,241);
-}
-.sec5left li:first-child{
-	border: 1px solid rgb(188,188,188);
+	border: 1px solid rgb(201,201,201);
 	border-bottom: none;
-	height: 30px;
-	background-color: #fff;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 2;
+	border-radius: 3px 3px 0 0;
+	cursor: pointer;
+	background-color: rgb(244,245,247);
 }
-.sec5left li:nth-child(2){
+.sec5leftdown li div{
+	width: 490px;
+	height: 250px;
+	border: 1px solid rgb(201,201,201);
+	border-radius: 0 0 3px 3px;
 	position: absolute;
-	top: 0;
-	left: 82px;
-}
-.sec5left li:nth-child(3){
-	position: absolute;
-	top: 0;
-	left: 164px;
-}
-.sec5left li:nth-child(4){
-	position: absolute;
-	top: 0;
-	left: 246px;
-}
-.sec5left li:nth-child(5){
-	position: absolute;
-	top: 0;
-	left: 330px;
-}
-.sec5leftdown>div{
-	width: 478px;
-	height: 243px;
-	border: 1px solid rgb(188,188,188);
-	border-radius: 0 3px 3px 3px;
-	position: absolute;
+	left: 0;
 	top: 30px;
-	left: 0px;
-	z-index: 1;
 }
 .sec5leftdown table{
-	width: 395px;
-	height: 185px;
-	margin: 29px auto;
+	width: 405px;
+	height: 190px;
+	margin: 0 auto;
+	margin-top: 30px;
 }
 .sec5leftdown table td{
-	margin: 0;
-	border: 1.5px solid rgb(214,214,214);
-	font-weight: bold;
+	cursor: pointer;
 	text-align: center;
+	border: 1px solid rgb(201,201,201);
 }
-.sec5leftdown table tr:nth-child(1) td:nth-child(1){
-	background-color: rgb(243,243,243);
+.sec5leftdown table td:hover{
+	background-color: rgb(244,245,247);
+}
+.sec5leftdown li div,.sec5leftdown li input{
+	display: none;
+}
+.sec5leftdown li input:checked~div{
+	display: block;
+}
+.sec5leftdown li input:checked~label{
+	position: relative;
+	z-index: 1000;
+	background-color: #fff;
 }
 /*右侧部分*/
 .sec5right{
@@ -604,6 +595,8 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	width: 315px;
 	height: 260px;
 	margin: 0 auto;
+	border-collapse: separate;
+	border-spacing: 1px;
 }
 .sec6left table thead{
 	line-height: 30px;
@@ -611,17 +604,20 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 }
 .sec6left table td{
 	width: 40px;
+	height: 40px;
+	box-sizing: border-box;
 	text-align: center;
+}
+.sec6left table td:hover{
+	border: 1px solid yellow;
 }
 .tdborder{
 	width: 38px;
 	border:1px solid yellow;
 }
 .sec6right h4{
-	margin: 0;
 	height: 40px;
 	line-height: 40px;
-	font-family: "黑体";
 	color: rgb(188,188,188);
 	text-indent: 28px;
 	background-color: rgb(244,245,247);
@@ -632,7 +628,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	height: 275px;
 	margin: 0 auto;
 	margin-top: 20px;
-	border-collapse: collapse;
 }
 .sec6right table tr td:nth-child(1){
 	width: 65px;
@@ -645,7 +640,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 }
 .sec6right td{
 	text-align: center;
-	font-family: "黑体";
 	border: 1px solid rgb(213,213,213);
 }
 .sec6right tbody tr:last-child td{
@@ -658,9 +652,6 @@ label[for="title"],label[for="price"],label[for="responsible"],label[for="descri
 	margin-left: 5px;
 	background-color: rgb(220,220,220);
 	vertical-align: middle;
-}
-.sec6right tbody tr div p{
-	margin: 0;
 }
 .sec6right .dazhong{
 	width: 80%;
