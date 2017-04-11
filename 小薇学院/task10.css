@@ -1,0 +1,41 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	padding: 20px;
+	border: 1px solid #999;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+}
+div>div{
+	width: 150px;
+	border: 1px solid #f00;
+}
+.one{
+	height: 120px;
+}
+.two{
+	height: 100px;
+}
+.three{
+	height: 40px;
+}
+.four{
+	height: 200px;
+	border: 1px solid #00f;
+}
+@media (max-width: 653px){
+	.container{
+		flex-flow: wrap;
+		align-items: flex-start;
+	}
+	.three{
+		margin-top: 20px;
+	}
+	.four{
+		order: -1;
+	}
+}
