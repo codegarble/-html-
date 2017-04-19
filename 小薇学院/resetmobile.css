@@ -34,4 +34,6 @@ a{
     font-family:"Helvetical Neue",helvetica,STHeiTi,sans-serif;
     text-decoration: none;
     color:#333;
+    -webkit-tap-highlight-color:transparent;/*去除点击高亮*/
 }
+

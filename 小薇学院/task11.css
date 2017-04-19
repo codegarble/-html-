@@ -18,18 +18,16 @@ body{
 }
 header{
 	width: 100%;
-	height: 6.67rem;
-	line-height: 3.33rem;
+	line-height: 3.33rem;/*垂直居中*/
 	background-color: #fff;
-	position: relative;
 }
-header section{
+header>div{
 	height: 3.33rem;
 	text-align: center;
 	color: #fff;
 	background-color: rgb(145,212,218);
 }
-header section a{
+header>div a{
 	width: 19%;
 	color: #fff;
 	position: absolute;
@@ -37,11 +35,11 @@ header section a{
 	top: 0;
 }
 header nav li{
-	display: inline-block;
 	box-sizing: border-box;
+	display: inline-block;
 	width: 20%;
+	height: 3.33rem;
 	text-align: center;
-	border-bottom: 0.2rem solid #fff;
 }
 header nav li:nth-child(2){
 	border-bottom: 0.2rem solid rgb(145,212,218);
@@ -51,35 +49,36 @@ header nav li:nth-child(2){
 }
 .sec2img1{
 	width: 100%;
-	height: 15.9rem;
+	vertical-align: bottom;/*消除图片产生的间隙*/
 }
 .sec2_flexbox{
 	height: 8.6rem;
+	padding: 0 0.4rem;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around; 
 	align-items: center;
 }
 .sec2_flexbox figure{
-	width: 15%;
+	width: 20%;
 	height: 80%;
-	max-height: 8.6rem;
 	text-align: center;
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;
+	justify-content: space-between;
 }
 .sec2_flexbox figure img{
-	max-height: 60%;
+	max-height: 70%;
 	max-width: 100%;
 	margin: 0 auto;
 	border-radius: 50%;
 }
 .sec2_flexbox figure figcaption{
-	margin-top: 1rem;
+	height: 15%;/*利用flex隐式地产生15%的间隔*/
 	font-size: 0.6rem;
 }
 .sec3{
+	padding: 0 0.4rem;
 	background-color: #fff;
 }
 .sec3 hr{
@@ -96,7 +95,7 @@ header nav li:nth-child(2){
 }
 .sec3_flexbox figure{
 	width: 33.3%;
-	height: 80%;
+	height: 9.76rem;
 	text-align: center;
 	display: flex;
 	flex-flow: column wrap;
@@ -108,13 +107,18 @@ header nav li:nth-child(2){
 	border: none;
 }
 .sec3_flexbox figure img{
-	max-height: 73.3%;
-	max-width: 95%;
+	max-height: 7.32rem;
+	max-width: 90%;
 	margin: 0 auto;
 }
-.sec3_flexbox figure figcaption p:last-child{
-	margin-top: 0.2rem;
+.sec3_flexbox figure figcaption p:first-child{
 	font-size: 0.8rem;
+	line-height: 1.2;
+}
+.sec3_flexbox figure figcaption p:last-child{
+	margin-top: 0.4rem;
+	font-size: 0.6rem;
+	line-height: 1;
 	color: rgb(98,98,98);
 }
 .sec4,.sec5{
@@ -145,8 +149,7 @@ header nav li:nth-child(2){
 	justify-content: space-between;
 }
 .sec4_flexitems img,.sec5_flexitems img{
-	max-width: 100%;
-	height: 100%;
+	max-height: 100%;
 }
 .sec4_flexitems p,.sec5_flexitems p{
 	height: 2.84rem;
@@ -197,17 +200,16 @@ header nav li:nth-child(2){
 	margin-top: 1.2rem;
 	margin-bottom: 3rem;
 	padding: 0 0.4rem;
-	height: 14rem;
 	background-color: #fff;
 }
 .sec8 figure{
-	height: 14rem;
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-around;
 }
 .sec8 h1{
 	font-size: 1.22rem;
+	line-height: 2;
 	color: rgb(98,98,98);
 }
 .sec8 figure>div{
@@ -225,5 +227,6 @@ header nav li:nth-child(2){
 }
 .sec8 p{
 	font-size: 0.7rem;
+	line-height: 2;
 	color: rgb(207,207,207);
 }
