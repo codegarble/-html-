@@ -1,0 +1,106 @@
+table{
+	width: 300px;
+	margin: 10px auto;
+	border-collapse: collapse;
+}
+table td{
+	border: 2px solid white;
+}
+table thead{
+	background-color: black;
+	color: white;
+}
+table tbody tr:nth-child(2n-1){
+	background-color: white;
+}
+table tbody tr:nth-child(2n){
+	background-color: rgb(203,203,203);
+}
+table tbody tr:nth-child(-n+3){
+	color: red;
+}
+.input1{
+	width: 200px;
+	margin: 8px auto;
+}
+input[name="input1"]{
+
+	width: 200px;
+	border: 1px solid rgb(225,225,225);
+	border-radius: 2px;
+}
+.input2{
+	width: 400px;
+	margin: 8px auto;
+}
+input[name="input2"]{
+	width: 400px;
+	border: 2px solid rgb(119,175,235);
+	border-radius: 3px;
+}
+.box{
+	width: 500px;
+	height: 250px;
+	margin: 8px auto;
+	border: 1px solid black;
+	position: relative;
+	overflow: hidden;
+}
+.box span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: white;
+	background-color: rgb(123,193,125);
+	border: 1px solid black;
+	border-right: none;
+	border-bottom: none;
+	position: absolute;
+	z-index: 1;
+}
+.box span:first-child{
+	right: 80px;
+	bottom: 0;
+}
+.box span:nth-child(2){
+	right: 40px;
+	bottom: 0;
+}
+.box span:nth-child(3){
+	right: 0;
+	bottom: 0;
+}
+.mybgcolor{
+	width: 1500px;
+	position: absolute;
+	-webkit-transition-duration: 2s;
+}
+.green:hover~.mybgcolor{
+	transform: translateX(0);
+}
+.blue:hover~.mybgcolor{
+	transform: translateX(-500px);
+}
+.yellow:hover~.mybgcolor{
+	transform: translateX(-1000px);
+}
+.blueone{
+	display: inline-block;
+	width: 500px;
+	height: 250px;
+	background-color: blue;
+}
+.greenone{
+	display: inline-block;
+	width: 500px;
+	height: 250px;
+	background-color: green;
+}
+.yellowone{
+	display: inline-block;
+	width: 500px;
+	height: 250px;
+	background-color: yellow;
+}
