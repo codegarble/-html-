@@ -74,8 +74,10 @@ input[name="input2"]{
 }
 .mybgcolor{
 	width: 1500px;
+	height: 250px;
+	background: linear-gradient(to right,green 33.33%,blue 33.33%,blue 66.66%,yellow 66.66%);
 	position: absolute;
-	-webkit-transition-duration: 2s;
+	transition-duration: 2s;
 }
 .green:hover~.mybgcolor{
 	transform: translateX(0);
@@ -86,21 +88,4 @@ input[name="input2"]{
 .yellow:hover~.mybgcolor{
 	transform: translateX(-1000px);
 }
-.blueone{
-	display: inline-block;
-	width: 500px;
-	height: 250px;
-	background-color: blue;
-}
-.greenone{
-	display: inline-block;
-	width: 500px;
-	height: 250px;
-	background-color: green;
-}
-.yellowone{
-	display: inline-block;
-	width: 500px;
-	height: 250px;
-	background-color: yellow;
-}
+
