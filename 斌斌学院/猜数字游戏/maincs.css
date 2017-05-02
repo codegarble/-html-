@@ -1,0 +1,18 @@
+.p1{
+  display: inline-block;
+}
+.restart{
+  display: block;
+}
+.para{
+   color: white;
+   text-align: center;
+}
+.failed{
+  width: 100px;
+  background: red;
+}
+.success{
+  width: 300px;
+  background: green;
+}
