@@ -5,7 +5,7 @@ var inputText,//输入的数字
 	myLabel,//输入数字展示提示
 	numlist,//输入数字展示
 	restart;//复位按钮
-	
+
 
 var para=document.createElement('p');//结果
 var hint=document.createElement('p');//提示大小
@@ -34,12 +34,10 @@ function compare(){
 		}
 		if(compareCount===10){
 			compareButton.setAttribute('disabled','disabled');
-			restart=document.createElement('button');
-			restart.setAttribute("class","restart");
-			restart.textContent="start new game";
-			restart.addEventListener('click',allrestart);
-			para.textContent="Game over!";
-			document.body.appendChild(restart);
+			para.textContent="!!Game over!!";
+			para.style.width="200px";
+			para.style.fontSize="20px";
+			setGameover();
 		}
 	}
 }
@@ -60,6 +58,7 @@ function failed(){
 		hint.textContent="Last guess was too low!";
 	}
 	numlist.textContent+=" "+inputText;
+	document.querySelector('input').focus();
 	para.textContent="Wrong!";
 	para.setAttribute('class','para failed');
 	document.body.appendChild(para);
@@ -71,6 +70,15 @@ function success(){
 	document.body.appendChild(para);
 	para.setAttribute('class','para success');
 	compareButton.setAttribute('disabled','disabled');
+	hint.textContent=" ";
+	setGameover();
+}
+function setGameover(){
+	restart=document.createElement('button');
+	restart.setAttribute("class","restart");
+	restart.textContent="start new game";
+	document.body.appendChild(restart);
+	restart.addEventListener('click',allrestart);
 }
 
 function allrestart(){
